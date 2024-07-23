@@ -1,6 +1,8 @@
-name: Python application
+name: Autograding Tests
 
-on: [push, pull_request]
+'on':
+- push
+- repository_dispatch
 
 jobs:
   build:
@@ -23,4 +25,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover -s . -p "test_session6.py"
+        python -m pytest "test_session6.py"
